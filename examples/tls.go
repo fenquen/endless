@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/fvbock/endless"
+	"endless"
 	"github.com/gorilla/mux"
 )
 

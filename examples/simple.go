@@ -5,23 +5,23 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/fvbock/endless"
+	"endless"
 	"github.com/gorilla/mux"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func handler7(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("WORLD!"))
 }
 
 func main() {
 	mux1 := mux.NewRouter()
-	mux1.HandleFunc("/hello", handler).
-		Methods("GET")
+	mux1.HandleFunc("/hello", handler7).Methods("GET")
 
 	err := endless.ListenAndServe("localhost:4242", mux1)
 	if err != nil {
 		log.Println(err)
 	}
+
 	log.Println("Server on 4242 stopped")
 
 	os.Exit(0)
